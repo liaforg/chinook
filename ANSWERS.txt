@@ -1,0 +1,24 @@
+1)Artist.where(name: 'Queen')
+  Album.where(artist_id: 51)
+
+2)MediaType.where(name: 'Protected MPEG-4 video file')
+  Track.where(media_type_id: 3).count
+
+3)Genre.find_by(name: 'Hip Hop/Rap')
+
+4)Track.where(genre_id: 17).count
+
+5)Track.sum('milliseconds')
+
+6)MediaType.where(name: 'MPEG audio file')
+  Track.where(media_type_id: 1).order(unit_price: :asc)
+
+7)MediaType.where(name: 'MPEG audio file')
+  Track.where(media_type_id: 1).order(unit_price: :asc).limit(1)
+
+8)Artist.order(created_at: :asc).limit(2)
+
+9)Genre.find_by(name: 'Electronica/Dance')
+  Track.where(genre_id: 1).order(unit_price: :asc).limit(1)
+
+10)Track.where(genre_id: 15).where(media_type_id: 1).count
